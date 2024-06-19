@@ -3,4 +3,4 @@
 
 This Repository will serve as the hub for my self study of this text.
 
-[Chapter 1. Introduction] (../1-Introduction/README.md)
+[Chapter 1. Introduction] (1-Introduction/README.md)
