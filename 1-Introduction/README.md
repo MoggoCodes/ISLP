@@ -1,4 +1,4 @@
 # Chapter 1 - Introduction
 [Back](https://github.com/MoggoCodes/IntroToStatLearning?tab=readme-ov-file)
 
-*Statisticial Learning* 
+*Statisticial Learning* refers to a vast set of tools for <u>understanding data</u>
