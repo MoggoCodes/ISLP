@@ -1,8 +1,6 @@
 # Introduction to Statistical Learning <br /> Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor
 
-This Repository will serve as the hub for my self study of this text.
-
-### Table of Contents
+## Table of Contents
 1. [Introduction](https://github.com/MoggoCodes/IntroToStatLearning)
 2. Chapter 2
 3. Chapter 3
