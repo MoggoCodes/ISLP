@@ -6,9 +6,34 @@
 3. Chapter 3
 
 # This Page
+- [What is This Book?](#what-is-this-book)
 - [Introduction](#introduction)
 - [Data Sets](#data-sets)
 - [History](#history)
+- [Notation](#notation)
+
+# What is This Book?
+The purpose of *An Introduction to Statistical Learning* (ISL) is to facilitate the transition of statistical learning from an academic to a mainstream field. ISL is not intended to replace past texts, but rather make the field more accessible.
+
+ISL is based on the following four premises
+1. *Many statistical learning methods are relevant and useful in a wide range of academic and non-academic disciplines, beyond just the statistical sciences*
+    - Similar to the prevalence of linear regression, some day many other contemporary statistical learning procedures will become as pervasive in a wide breadth of disciplines
+    - Rather than detailing every possible approach, scope will be limited to presenting the most widely applicable methods
+2. *Statistical learning should not be viewed as a series of black boxes*
+    - Without understanding HOW a technique works, one cannot properly CHOOSE the best approach for their situation
+    - Along with presenting how to perform a given technique; the model, intuition, assumptions, and trade-offs behind it will be carefully described
+3. *While it is important to know what is happening under the hood, it is not necessary to rebuild the machine inside the box!*
+    - Discussion of technical details related to fitting procedures and theoretical properties are minimized
+4. *The reader is interested in applying statistical learning methods to real-world problems*
+    - Hands-on approach with labs and excercises
+    - Lab: walkthrough of a realistic application of some method(s)
+
+# Notation
+$n$ - number of observations in our sample
+$p$ - number of variables per observation
+
+An observation is denoted by a column vector of magnitude $p$
+/[x = \begin{pmatrix} x_1 \\ \vdots \\ x_p \end{pmatrix}/]
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
@@ -34,7 +59,7 @@
     - NO OUTCOME; desire to create clusters/groups
 
 # History
-Though the term *statistical learning* is fairly new, it is underlined by conceps developed long ago.
+Though the term *statistical learning* is fairly new, it is underlined by concepts developed long ago.
 - <ins>**Linear Regression**</ins> - The method of *Least Squares* was developed in the 19th century.
     - First applied in astronomy.
     - Useful for predicting qualitative outcomes
@@ -50,6 +75,6 @@ By the end of the 1970s many mature <ins>**Linear Methods**</ins> were available
 - <ins>**Classification and Regression Trees**</ins> - 1980s
 - <ins>**Generalized Additive Models**</ins> - 1980s
 - <ins>**Neural Networks**</ins> - 1980s
-- <ins>**Support Vector Machines</ins> - 1990s
+- <ins>**Support Vector Machines**</ins> - 1990s
 
 Now statistical learning has emerged as a new subfield in statistics focused on modeling and prediction. Progress has been marked by the increasing availability of powerful software. We are amidst a transformation from merely a set of techniques into a proper subdiscipline with substantial breadth and depth.
