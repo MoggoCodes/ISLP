@@ -6,11 +6,14 @@
 3. Chapter 3
 
 # This Page
+- [Introduction to Statistical Learning  Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor](#introduction-to-statistical-learning--gareth-james-daniela-witten-trevor-hastie-robert-tibsirani-jonathan-taylor)
+- [Table of Contents](#table-of-contents)
+- [This Page](#this-page)
 - [What is This Book?](#what-is-this-book)
+- [Notation](#notation)
 - [Introduction](#introduction)
 - [Data Sets](#data-sets)
 - [History](#history)
-- [Notation](#notation)
 
 # What is This Book?
 The purpose of *An Introduction to Statistical Learning* (ISL) is to facilitate the transition of statistical learning from an academic to a mainstream field. ISL is not intended to replace past texts, but rather make the field more accessible.
@@ -29,7 +32,7 @@ ISL is based on the following four premises
     - Lab: walkthrough of a realistic application of some method(s)
 
 # Notation
-$n$ - number of observations in our sample <\br>
+$n$ - number of observations in our sample <br />
 $p$ - number of variables per observation
 
 An observation is denoted by a column vector of magnitude $p$ $$ x = \begin{pmatrix} x_1 \\ \vdots \\ x_p \end{pmatrix} $$
