@@ -6,7 +6,9 @@
 3. Chapter 3
 
 # This Page
-- (#Introduction)
+- [Introduction](#introduction)
+- [Data Sets](#data-sets)
+- [History](#history)
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
