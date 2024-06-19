@@ -1,5 +1,4 @@
-# Introduction to Statistical Learning
-## Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor
+# Introduction to Statistical Learning <br /> Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor
 
 This Repository will serve as the hub for my self study of this text.
 
