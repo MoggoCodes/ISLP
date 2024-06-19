@@ -1,6 +1,6 @@
 # Introduction to Statistical Learning <br /> Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor
 
-## Table of Contents
+# Table of Contents
 1. [Introduction](https://github.com/MoggoCodes/IntroToStatLearning)
 2. Chapter 2
 3. Chapter 3
@@ -12,7 +12,7 @@
 - *Unsupervised* Learning - There are inputs but no supervising output
     - "Learn" about relationships and structure within the input data
 
-### Data Sets
+## Data Sets
 1. Wage Data
 2. Stock Market Data
 3. Gene Expression Data
