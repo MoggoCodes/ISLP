@@ -43,9 +43,7 @@ Similarly a sample is made up of $n$ observation vectors and can be denoted by g
 
 $$X = \begin{pmatrix} x_1 & \ldots & x_n \end{pmatrix}.$$  
 
-
-
-Here $1+1=2$ $x_i = {\begin{pmatrix} x_{i1} \\\ \vdots \\\ x_{ip} \end{pmatrix}}$ denotes the $i^{th}$
+Here $x_i$ denotes the $i^{th}$
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
