@@ -42,7 +42,7 @@ $$x = \begin{pmatrix} x_1 \\\ \vdots \\\ x_p \end{pmatrix}.$$
 Here $x_j$ denotes the $j^{th}$ variable where $j = 1, 2, \ldots, p$.
 
 Note how a single observation $x$ is made up of $p$ scalar values of variables and denoted by grouping them in a column vector. 
-Similarly a sample is made up of $n$ observation vectors and can be denoted by grouping them in matrix $<b>X$.
+Similarly a sample is made up of $n$ observation vectors and can be denoted by grouping them in matrix $X$.
 
 $$<b>X = \begin{pmatrix} x_1 & \ldots x_n \end{pmatrix}.$$  
 
