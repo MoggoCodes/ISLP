@@ -45,7 +45,7 @@ $$X = \begin{pmatrix} x_1 & \ldots & x_n \end{pmatrix}.$$
 
 
 
-Here $x_i = {\begin{pmatrix} x_{i1} \\\ \vdots \\\ x_{ip} \end{pmatrix}}$ denotes the $i^{th}$
+Here \$x_i = {\begin{pmatrix} x_{i1} \\\ \vdots \\\ x_{ip} \end{pmatrix}}\$ denotes the $i^{th}$
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
