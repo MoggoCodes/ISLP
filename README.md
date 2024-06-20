@@ -35,8 +35,10 @@ ISL is based on the following four premises
 $n$ - number of observations in our sample  
 $p$ - number of variables per observation
 
-An observation is denoted by a column vector of magnitude $p$:  
-$$ x = \begin{pmatrix} \displaylines{x_1 \\\ \vdots \\\ x_p} \end{pmatrix}. $$
+An observation is denoted by a column vector of magnitude $p$: 
+
+
+$$ x = \begin{pmatrix} x_1 \\\ \vdots \\\ x_p \end{pmatrix}. $$
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
