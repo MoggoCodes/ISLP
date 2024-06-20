@@ -1,12 +1,12 @@
 {
     "cache_control": "public, max-age=1200",
-    "etag": "\"d1ff40f7e9439b72b90969f17d20b2c9\"",
+    "etag": "\"b8a8d5cefecfbda65d6fc14e3025b4d3\"",
     "has_zst": {
-        "last_checked": "2024-06-19T22:16:07Z",
+        "last_checked": "2024-06-20T01:46:19Z",
         "value": true
     },
-    "mod": "Wed, 19 Jun 2024 22:07:40 GMT",
-    "mtime_ns": 1718835370343172000,
-    "size": 80513784,
+    "mod": "Thu, 20 Jun 2024 01:22:31 GMT",
+    "mtime_ns": 1718847980016689000,
+    "size": 80530894,
     "url": "https://conda.anaconda.org/conda-forge/osx-arm64/repodata.json.zst"
 }
