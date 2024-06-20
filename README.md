@@ -1,14 +1,11 @@
 # Introduction to Statistical Learning <br /> Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor
 
 # Table of Contents
-1. [Introduction](https://github.com/MoggoCodes/IntroToStatLearning)
+1. [Introduction (This Page)](https://github.com/MoggoCodes/IntroToStatLearning)
 2. Chapter 2
 3. Chapter 3
 
 # This Page
-- [Introduction to Statistical Learning  Gareth James, Daniela Witten, Trevor Hastie, Robert Tibsirani, Jonathan Taylor](#introduction-to-statistical-learning--gareth-james-daniela-witten-trevor-hastie-robert-tibsirani-jonathan-taylor)
-- [Table of Contents](#table-of-contents)
-- [This Page](#this-page)
 - [What is This Book?](#what-is-this-book)
 - [Notation](#notation)
 - [Introduction](#introduction)
@@ -46,7 +43,9 @@ Similarly a sample is made up of $n$ observation vectors and can be denoted by g
 
 $$X = \begin{pmatrix} x_1 & \ldots & x_n \end{pmatrix}.$$  
 
-Here $x_i = {\begin{pmatrix} x_{i1} & \ldots & x_{ip} \end{pmatrix}}^T$ denotes the $i^{th}$
+
+
+Here $x_i = {\begin{pmatrix} x_{i1} \\\ \vdots \\\ x_{ip} \end{pmatrix}}$ denotes the $i^{th}$
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
