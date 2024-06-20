@@ -32,9 +32,19 @@ ISL is based on the following four premises
 $n$ - number of observations in our sample  
 $p$ - number of variables per observation
 
-An observation is denoted by a column vector of magnitude $p$:
+```math
+\begin{tabular}{|c|c|c|}
+\hline
+Variable & Container & Shape
+\end{tabular}
+```
 
-$$x = \begin{pmatrix} x_1 \\\ \vdots \\\ x_p \end{pmatrix}.$$
+An *observation* refers to the collection of the values of its $p$ variables. Each value is denoted by a rank-0 tensor (scalar). Each of these tensors is grouped together in a rank-1 tensor (column vector) of size $p$ to denote a single observation as such. Suppose that $x_i$ is the $i^{th}$ observation comprised of $p$ variables. Each value is denoted by $x_{ij}$ and can be grouped together in a sample as such
+
+$$x_i = \begin{pmatrix} x_{i1} \\\ \vdots \\\ x_{ip} \end{pmatrix}.$$
+
+A *sample* refers to the collection of the values of its $n$ observations. 
+
 
 Here $x_j$ denotes the $j^{th}$ variable where $j = 1, \ldots, p$.
 
