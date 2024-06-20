@@ -44,9 +44,9 @@ Here $x_j$ denotes the $j^{th}$ variable where $j = 1, 2, \ldots, p$.
 Note how a single observation $x$ is made up of $p$ scalar values of variables and denoted by grouping them in a column vector. 
 Similarly a sample is made up of $n$ observation vectors and can be denoted by grouping them in matrix $X$.
 
-$$X = \begin{pmatrix} x_1 & \ldots x_n \end{pmatrix}.$$  
+$$<emph>X<\emph> = \begin{pmatrix} x_1 & \ldots x_n \end{pmatrix}.$$  
 
-Here $x_i = \begin{pmatrix} x_i1 & \ldots & x_ip \end{pmatrix}$ denotes the $i^{th}$
+Here $ x_i = \begin{pmatrix} x_{i1} & \ldots & x_{ip} \end{pmatrix} $ denotes the $i^{th}$
 
 # Introduction
 *Statisticial Learning* refers to a vast set of tools for <ins>**understanding data**</ins>
