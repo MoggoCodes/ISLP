@@ -1,0 +1,12 @@
+{
+    "cache_control": "public, max-age=1200",
+    "etag": "\"93c8b42a96ffb3d13136f62ec1475b4f\"",
+    "has_zst": {
+        "last_checked": "2024-06-23T18:51:55Z",
+        "value": true
+    },
+    "mod": "Sun, 23 Jun 2024 18:05:54 GMT",
+    "mtime_ns": 1719168715762571000,
+    "size": 80967129,
+    "url": "https://conda.anaconda.org/conda-forge/osx-arm64/repodata.json.zst"
+}

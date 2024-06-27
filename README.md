@@ -29,21 +29,126 @@ ISL is based on the following four premises
     - Lab: walkthrough of a realistic application of some method(s)
 
 ## Notation
-$n$ - Number of observations in our sample  
-$p$ - Number of predictors measured per observation
+Statistical learning methods are derived from linear and matrix algebra. As a result, it is common to deal with scalars, vectors, and matrices. This is why it is important to have very clear notation rules as to follow the math and understand what various objects represent.
+
+### Scalars $(a \in \mathbb R)$
+Scalar objects will be notated by *normal font* letters. This means non-bold.
+
+#### Random Variables
+An object that represent a random variable will be notated by an *upper case normal font* letter.
+$$ \forall j \in [1, 5]_\mathbb{Z}: \ \ X_{1j}, \ldots, X_{100j} \overset{\mathrm{i.i.d}}{\sim} \mathcal N(0,1) $$
+
+#### Constants and Coefficients
+Scalar constants and coeffients will be notated by *lower case normal font* letters. These letters may be greek or english.
+$$n = 100, \ p = 5 \\ \hat y_i = \hat \beta_0 + \begin{pmatrix} X_{i1} & \ldots & X_{i5} \end{pmatrix} \begin{pmatrix} \hat\beta_1 \\ \vdots \\ \hat\beta_5 \end{pmatrix}$$
+
+
+
+### Vectors $(v \in \mathbb R^k)$
+Vectors are notated by a *normal font letter* in most cases. The reason for the distinction between bold and normal will be clear when discussing matrices.
+$$X_i = \begin{pmatrix} X_{i1} \\ \vdots \\ X_{i5} \end{pmatrix} , \ \ \ \beta = \begin{pmatrix} \beta_1 \\ \vdots \\ \beta_5 \end{pmatrix}$$
+
+#### Shape
+The shape of a vector is a bit of a tricky subject. Obviously, they CAN be represented by a column or a row vector without any rhyme or reason. The truth is that they are neither. A vector is actually a rank-1 tensor, which means that it only has one dimension. Whether that dimension is represented vertically or horizontally is irrelevant.
+
+However, this DOES becomes an important distinction in matrix algebra. This is because essentially we are often implicitly casting a rank-1 tensor to rank-2 (matrix) and although vector shapes $(k,) = (k) = (,k)$ are equivalent; matrix shapes $(k, 1) \neq (1, k)$ are not. This ambiguity does not occur with scalars since a rank-0 tensor (scalar) has shape $(0)$. Casting it to a higher rank can only result in $(1,), (,1), (1,1)$, etc. all of which are indistinguishable.
+
+A hand-wavey way to understand when row vs. column vectors are appropriate is to understand what higher order tensors truly are. Higher order tensors CAN represent an object of higher dimension, but the same object can be used as a function to map between tensors of different dimension. In linear regression $\beta$ represents a map from a rank-1 tensor to a rank-0 tensor, compare this to $X_i$, which is used as an input to this map.
+
+This distinction is important and our solution will be to ALWAYS use shape $(k,)$ for vectors and represent them by column vectors. Furthermore, the transpose operator $(\boldsymbol v^T)$ will be used to flip to $(,k)$ when necessary.
+$$\hat y_i = \hat\beta_0 + X_i^T \hat\beta$$
+
+### Matrices $(\boldsymbol M \in \mathbb R^{n \times p})$
+Matrices are notated by a *bold letter*.
+
+#### Shape
+$\boldsymbol M$ has shape $(n,p)$: $n$ rows and $p$ columns.
+$$\boldsymbol X = \begin{pmatrix} X_{11} & \ldots & X_{1p} \\ \vdots & \ddots & \vdots \\ X_{n1} & \ldots & X_{np} \end{pmatrix}$$
+
+#### Iterators
+$i \in \mathbb Z: 1 \leq i \leq n$ is used to iterate through all the rows of a matrix AND represent the selection of an arbitrary single row.
+$$X_i \in \mathbb R^p$$
+$j \in \mathbb Z: 1 \leq j \leq p$ is used to iterate through all the columns of a matrix AND represent the selection of an arbitrary single column.
+$$\boldsymbol X_j \in \mathbb R^n$$
+When referring to vector $X_k$, it is ambiguous if we are selecting a row or a column, which is why if a vector if of size $(n)$, it is denoted with a *bold* letter.
+
+### Statistical Experiments
+Recall that the goal of a statistical experiment is to take measurements on a *sample* and extrapolate the results to the entire *population*.
+
+Tensors of rank 0, 1, and 2 adhering to the notational rules above will be used together to represent various components within a statistical experiment. Note that many statistical experiments can be used on a single dataset.
+
+For contextualizing the following subsections, consider this example. We are interested in predicting the height of a random person in our city based upon their age, sex, and weight. We will take a random sample of $100$ people where we record their height, age, sex, and weight.
+
+#### Set Up
+Before an experiment begins, multiple parameters must be selected to govern it. 2 of the most important are:
+$n$ - Number of observations
+$p$ - Number of predictors
+
+In our example $n = 100$ and $p = 3$
+
+#### Random Variable (RV)
+An experiment begins with the repeated measurements. Each measurement is a *Random Variable*.
+$$ \forall i \in [1,n], j \in [1, p]_\mathbb{Z}: \ \ X_{ij} \overset{\mathrm{i.i.d}}{\sim} \mathcal N(0,1) $$
+
+For each observation $i$, $p$ predictive RVs: $X_{i1}, \ldots, X_{ip}$ are measured making a total of $np$ RVs. In supervised learning situations, there are total of $n(p + 1)$ RVs since an outcome RV $(Y_i)$ is also measured.
+
+In our example, there is an outcome (height) thus supervised learning approaches are appropriate. For observation $i$ Let us define our RVs.
+$Y_i$ - height (decimal)
+$X_{i1}$ - age (integer)
+$X_{i2}$ - sex (factor - 2)
+$X_{i3}$ - weight (decimal)
+
+#### Observation
+Each of these RVs is grouped into a single *observation*. We are most interested in the feature vector of observation-$i$.
+$$X_i = \begin{pmatrix} X_{i1} \\ \vdots \\ X_{ip} \end{pmatrix}$$
+
+Note that outcome $y_i$ may have been measured, but is not part of $X_i$.
+
+#### Sample
+All $n$ feature vectors can be grouped together into a single *sample*.
+$$\boldsymbol X = \begin{pmatrix} X_1 \\ \vdots \\ X_n \end{pmatrix} = \begin{pmatrix} X_{1,1} & \ldots & X_{1p} \\ \vdots & \ddots & \vdots \\ X_{n1} & \ldots & X_{np} \end{pmatrix}$$
+
+$\boldsymbol{X}_j$ is a vector of specific interest. It has many uses across various SL techniques and is a sample of feature $j$. The goal is that $n$ is large enough so that each $\boldsymbol X_j$ has the same distribution as the feature in the population. While each element is still an RV, $\boldsymbol X_j$ is a *variable* (not random).
+
+#### Outcome
+This is only relevant in experiments with a defined outcome. As mentioned in the RV section, there are an extra $p$ measured RVs missing from our *sample* matrix. We store them seperate in an *outcome* vector $(\boldsymbol Y)$.
+$$\boldsymbol Y = \begin{pmatrix} Y_1 \\ \vdots \\ Y_n \end{pmatrix}$$
+
+#### Putting it Together
+All of these parts represent the data collection stage. The question that we have hopefully already answered (with a yes) before we began our experiment is if we believe there truly exists a function $f$ that maps $X_i$ to $Y_i$.
+$$Y = f(X) + \epsilon$$
+
+Here $\epsilon$ represents random noise present in the real world. Our goal now is to use the data that we have gathered to predict $f$. We want to train a *model* on our data.
+$$\hat {\boldsymbol Y} = \hat f (\boldsymbol X)$$
+
+Here $\hat{\boldsymbol{Y}}$ represents our *predicted* outcomes. There is an infinite number of models $(\hat f)$ that can accomplish this, but our predictions will just be really bad. To check if our predictions are good we measure the residual error of observation-$i$: $e_i = Y_i - \hat Y_i$. The lower $|e_i|$ is the better our model performed for data point $i$. Thus we want a model with a small magnitude of $\boldsymbol{e} = \begin{pmatrix} e_1 & \ldots & e_n \end{pmatrix}^T$ such that
+$$\boldsymbol Y = \hat f (\boldsymbol X) + e$$
+
+We mentioned before that it we can make $\hat f$ function and just accept that $e$ will be very large. It is also quite easy for a computer to play "connect-the-dots" and find a $\hat f$ with a near 0 magnitude $e$. This is also not a good model because of *overfitting*. This will be discussed deeper in future chapters, but as a preliminary look at the equation that we are modeling, the $\epsilon$ term is the key. Random noise exists in the real world and thus, we do not want $\hat f$ to be a perfect map to the outcome. Instead of $|e| = 0$ we actually want $e = \epsilon$. The problem is that $\epsilon$ is unmeasurable.
+
+#### What's Next
+Our next step is to collect a new sample. Our first sample is our training data. Our next sample is testing data. Our model was created with no knowledge of this data. Evaluating its performance on this new data is our best metric of its performance.
+
+#### Summary
+We can summarize the various objects that we now have 
+
+#### Parameters
+The experiment is governed by the selection of various parameters. 2 of the most important are:
 
 $x$ - Predictive quantity of interest
 $y$ - Outcome measurement
 
-|    Variable     |    Denotes     |    Collection    |     Tensor      | Shape |
-| :-------------: | :------------: | :--------------: | :-------------: | :---: |
-| $\boldsymbol X$ |     Sample     | $n$ observations | Rank-2 (matrix) | (n,p) |
-|       $y$       | Outcome Sample | $n$ measurements | Rank-1 (vector) |  (n)  |
-|      $x_i$      |  Observation   | $p$ measurements | Rank-1 (vector) |  (p)  |
-| $y_j$/$x_{ij}$  |  Measurement   |       self       | Rank-0 (scalar) | point |
+|     Variable      |     Denotes     |      Collection      |     Tensor      | Shape |
+| :---------------: | :-------------: | :------------------: | :-------------: | :---: |
+|  $\boldsymbol X$  |     Sample      | $n$ Feature Vectors  | Rank-2 (matrix) | (n,p) |
+|  $\boldsymbol Y$  |     Labels      |     $n$ Outcomes     | Rank-1 (vector) |  (n)  |
+| $\boldsymbol X_j$ |    Variable     | $n$ Random Variables | Rank-1 (vector) |  (n)  |
+|       $X_i$       | Feature Vector  | $p$ Random Variables | Rank-1 (vector) |  (p)  |
+|       $Y_i$       |  Outcome (RV)   |         self         | Rank-0 (scalar) |  ()   |
+|     $X_{ij}$      | Random Variable |         self         | Rank-0 (scalar) |  ()   |
 
 #### Random Variable
-A *Random Variable* (RV) is a quantity that is unknown until its value is measured. The objective of *Statistical Learning* is to find predict the measurement of one RV based of the measurement of others.
+A *Random Variable* (RV) is a quantity that is unknown until its value is measured. The objective of *Statistical Learning* is to predict the measurement of one RV based of the measurement of others.
 - **Supervised** - Predict outcome $Y$ based on corresponding measurements of $X_1, \ldots, X_p$
 - **Unsupervised** - Predict $X_1, \ldots, X_3$ based on corresponding measurements of $X_4, \ldots, X_p$
 
